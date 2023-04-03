@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-@Component
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -24,22 +24,11 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     private Car car;
 
-    @Autowired
-    public User(Car car) {
-        this.car = car;
-    }
-
     public User() {
     }
 
-    @Override
-    public String toString() {
-        return "User {" +
-                "id = " + id +
-                ", firstName = '" + firstName + '\'' +
-                ", lastName = '" + lastName + '\'' +
-                ", email = '" + email + '\'' +
-                '}';
+    public User(Car car) {
+        this.car = car;
     }
 
     public User(String firstName, String lastName, String email) {
@@ -82,6 +71,16 @@ public class User {
 
     public Car getCar() {
         return car;
+    }
+
+    @Override
+    public String toString() {
+        return "User {" +
+                "id = " + id +
+                ", firstName = '" + firstName + '\'' +
+                ", lastName = '" + lastName + '\'' +
+                ", email = '" + email + '\'' +
+                '}';
     }
 
     public void setCar(Car car) {
