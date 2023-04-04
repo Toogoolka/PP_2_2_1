@@ -30,6 +30,7 @@ public class MainApp {
 
 
         //   set cars to users
+
         user1.setCar(car1);
         user2.setCar(car2);
         user3.setCar(car3);
@@ -41,6 +42,7 @@ public class MainApp {
         userService.add(user4);
 
         System.out.println("\nАвто принадлежит: " + carServiece.getUserByCar(car3.getModel(), car3.getSeries()) + "\n");
+
 
 //        List<User> users = userService.listUsers();
 //        System.out.println("***************************************************");
